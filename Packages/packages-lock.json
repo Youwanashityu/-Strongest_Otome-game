@@ -302,6 +302,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.yujiap.unity-toolbar-extension": {
+      "version": "https://github.com/Yusuke57/UnityToolbarExtension.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "4f342dbe9321d5a8f9556c8796aa4acf25ae25fc"
+    },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
       "depth": 0,
