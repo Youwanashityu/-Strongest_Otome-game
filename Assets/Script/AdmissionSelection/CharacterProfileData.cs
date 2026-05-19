@@ -49,15 +49,21 @@ namespace Kutsuroideke.AdmissionSelection
         [Header("識別情報")]
         [SerializeField] private string characterId = "";
         [SerializeField] private string displayName = "";
+
+        [Header("画像")]
         [SerializeField] private Sprite portrait;
+        [SerializeField] private Sprite resumeSprite;
 
         [Header("履歴書情報")]
         [TextArea(1, 2)]
         [SerializeField] private string crimeSummary = "";
+
         [TextArea(2, 5)]
         [SerializeField] private string publicRecord = "";
+
         [TextArea(2, 5)]
         [SerializeField] private string personalityNote = "";
+
         [TextArea(2, 5)]
         [SerializeField] private string admissionReason = "";
 
@@ -67,6 +73,7 @@ namespace Kutsuroideke.AdmissionSelection
         public string CharacterId => characterId;
         public string DisplayName => displayName;
         public Sprite Portrait => portrait;
+        public Sprite ResumeSprite => resumeSprite;
         public string CrimeSummary => crimeSummary;
         public string PublicRecord => publicRecord;
         public string PersonalityNote => personalityNote;
@@ -83,40 +90,6 @@ namespace Kutsuroideke.AdmissionSelection
         }
 
         /// <summary>
-        /// 選択画面の検索やデバッグ表示で使いやすい結合済みテキストを返します。
-        /// </summary>
-        public string BuildSearchText()
-        {
-            return string.Join(
-                " ",
-                characterId,
-                displayName,
-                crimeSummary,
-                publicRecord,
-                personalityNote,
-                admissionReason
-            );
-        }
-
-        /// <summary>
-        /// インスペクター上で見分けやすい簡易ラベルを返します。
-        /// </summary>
-        public string BuildDebugLabel()
-        {
-            if (string.IsNullOrWhiteSpace(displayName))
-            {
-                return characterId;
-            }
-
-            if (string.IsNullOrWhiteSpace(characterId))
-            {
-                return displayName;
-            }
-
-            return $"{displayName} ({characterId})";
-        }
-
-        /// <summary>
         /// シーン遷移後に保持する最低限の選択情報へ変換します。
         /// </summary>
         public SelectedCharacterInfo ToSelectedInfo(string signedManagerName)
@@ -125,7 +98,7 @@ namespace Kutsuroideke.AdmissionSelection
         }
 
         /// <summary>
-        /// ScriptableObject編集時にIDの前後空白を落とし、空白混入による不一致を防ぎます。
+        /// ScriptableObject編集時にIDと表示名の前後空白を落とします。
         /// </summary>
         private void OnValidate()
         {

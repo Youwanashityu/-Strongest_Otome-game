@@ -10,14 +10,8 @@ namespace Kutsuroideke.AdmissionSelection
     /// </summary>
     public sealed class ResumeCardView : MonoBehaviour
     {
-        [Header("基本表示")]
-        [SerializeField] private TMP_Text nameText;
-        [SerializeField] private TMP_Text crimeText;
-        [SerializeField] private TMP_Text publicRecordText;
-        [SerializeField] private TMP_Text personalityNoteText;
-        [SerializeField] private TMP_Text admissionReasonText;
-        [SerializeField] private Image portraitImage;
-        [SerializeField] private Image accentImage;
+        [Header("履歴書画像")]
+        [SerializeField] private Image resumeImage;
 
         [Header("担当者欄")]
         [SerializeField] private Button managerFieldButton;
@@ -31,7 +25,7 @@ namespace Kutsuroideke.AdmissionSelection
         public string SignedManagerName { get; private set; } = "";
 
         /// <summary>
-        /// 担当者欄のクリックイベントをUnity UIから受け取れるようにします。
+        /// 担当者欄のクリックイベントを登録します。
         /// </summary>
         private void Awake()
         {
@@ -42,7 +36,7 @@ namespace Kutsuroideke.AdmissionSelection
         }
 
         /// <summary>
-        /// キャラクター履歴書の表示内容をまとめて更新します。
+        /// キャラクターの履歴書PNGをカードへ反映します。
         /// </summary>
         public void Bind(CharacterProfileData profile)
         {
@@ -50,22 +44,15 @@ namespace Kutsuroideke.AdmissionSelection
             IsSigned = false;
             SignedManagerName = "";
 
-            SetText(nameText, profile.DisplayName);
-            SetText(crimeText, profile.CrimeSummary);
-            SetText(publicRecordText, profile.PublicRecord);
-            SetText(personalityNoteText, profile.PersonalityNote);
-            SetText(admissionReasonText, profile.AdmissionReason);
-            SetText(managerNameText, "");
-
-            if (portraitImage != null)
+            if (resumeImage != null)
             {
-                portraitImage.sprite = profile.Portrait;
-                portraitImage.enabled = profile.Portrait != null;
+                resumeImage.sprite = profile.ResumeSprite;
+                resumeImage.enabled = profile.ResumeSprite != null;
             }
 
-            if (accentImage != null)
+            if (managerNameText != null)
             {
-                accentImage.color = profile.AccentColor;
+                managerNameText.text = "";
             }
 
             if (approvedStamp != null)
@@ -75,13 +62,17 @@ namespace Kutsuroideke.AdmissionSelection
         }
 
         /// <summary>
-        /// 入力されたプレイヤー名を担当者欄に記入し、承認印を表示します。
+        /// 入力されたプレイヤー名を担当者欄に表示し、承認印を出します。
         /// </summary>
         public void Sign(string managerName)
         {
             SignedManagerName = managerName;
             IsSigned = true;
-            SetText(managerNameText, managerName);
+
+            if (managerNameText != null)
+            {
+                managerNameText.text = managerName;
+            }
 
             if (approvedStamp != null)
             {
@@ -90,18 +81,7 @@ namespace Kutsuroideke.AdmissionSelection
         }
 
         /// <summary>
-        /// TMP_Textが未設定でも落ちないよう、安全にテキストを反映します。
-        /// </summary>
-        private void SetText(TMP_Text targetText, string value)
-        {
-            if (targetText != null)
-            {
-                targetText.text = value;
-            }
-        }
-
-        /// <summary>
-        /// 担当者欄が押されたことを、選択シーンManagerへ通知します。
+        /// 担当者欄が押されたことを選択シーンManagerへ通知します。
         /// </summary>
         private void HandleManagerFieldClicked()
         {
