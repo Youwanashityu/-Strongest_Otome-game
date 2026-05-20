@@ -54,6 +54,13 @@ namespace Kutsuroideke.AdmissionSelection
         [SerializeField] private Sprite portrait;
         [SerializeField] private Sprite resumeSprite;
 
+        [Header("シナリオCSV")]
+        [SerializeField] private TextAsset day1Csv;
+        [SerializeField] private TextAsset day2Csv;
+        [SerializeField] private TextAsset day3Csv;
+        [SerializeField] private TextAsset endingCsvA;
+        [SerializeField] private TextAsset endingCsvB;
+
         [Header("履歴書情報")]
         [TextArea(1, 2)]
         [SerializeField] private string crimeSummary = "";
