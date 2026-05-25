@@ -361,7 +361,13 @@ namespace Kutsuroideke.Scenario
         private void DisplayCurrentRow()
         {
             string resolvedText = variableResolver.Resolve(currentRow.Text, currentDay, currentCharacter, currentSelectedInfo);
-            novelManager.DisplayRow(currentRow, resolvedText, $"DAY{currentDay}", currentCharacter.Portrait);
+            novelManager.DisplayRow(
+                currentRow,
+                resolvedText,
+                $"DAY{currentDay}",
+                currentCharacter.BackgroundSprite,
+                currentCharacter.Portrait
+            );
             backlog.Add(new ScenarioBacklogEntry(currentRow.Speaker, resolvedText));
 
             if (currentRow.HasChoices())

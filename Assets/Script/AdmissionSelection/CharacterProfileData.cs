@@ -41,7 +41,7 @@ namespace Kutsuroideke.AdmissionSelection
     }
 
     /// <summary>
-    /// 攻略対象選択シーンで表示する履歴書情報を保持するScriptableObjectです。
+    /// 攻略対象選択とシナリオ進行で使う、キャラクター単位の設定データです。
     /// </summary>
     [CreateAssetMenu(fileName = "CharacterProfileData", menuName = "Kutsuroideke/Character Profile")]
     public sealed class CharacterProfileData : ScriptableObject
@@ -51,6 +51,7 @@ namespace Kutsuroideke.AdmissionSelection
         [SerializeField] private string displayName = "";
 
         [Header("画像")]
+        [SerializeField] private Sprite backgroundSprite;
         [SerializeField] private Sprite portrait;
         [SerializeField] private Sprite resumeSprite;
 
@@ -64,13 +65,10 @@ namespace Kutsuroideke.AdmissionSelection
         [Header("履歴書情報")]
         [TextArea(1, 2)]
         [SerializeField] private string crimeSummary = "";
-
         [TextArea(2, 5)]
         [SerializeField] private string publicRecord = "";
-
         [TextArea(2, 5)]
         [SerializeField] private string personalityNote = "";
-
         [TextArea(2, 5)]
         [SerializeField] private string admissionReason = "";
 
@@ -79,15 +77,15 @@ namespace Kutsuroideke.AdmissionSelection
 
         public string CharacterId => characterId;
         public string DisplayName => displayName;
+        public Sprite BackgroundSprite => backgroundSprite;
         public Sprite Portrait => portrait;
         public Sprite ResumeSprite => resumeSprite;
-        public string CrimeSummary => crimeSummary;
-
         public TextAsset Day1Csv => day1Csv;
         public TextAsset Day2Csv => day2Csv;
         public TextAsset Day3Csv => day3Csv;
         public TextAsset EndingCsvA => endingCsvA;
         public TextAsset EndingCsvB => endingCsvB;
+        public string CrimeSummary => crimeSummary;
         public string PublicRecord => publicRecord;
         public string PersonalityNote => personalityNote;
         public string AdmissionReason => admissionReason;
@@ -103,46 +101,80 @@ namespace Kutsuroideke.AdmissionSelection
         }
 
         /// <summary>
+        /// 指定された日数に対応する会話CSVを返します。
+        /// </summary>
+        public TextAsset GetDayCsv(int day)
+        {
+            switch (day)
+            {
+                case 1:
+                    return day1Csv;
+                case 2:
+                    return day2Csv;
+                case 3:
+                    return day3Csv;
+                default:
+                    return null;
+            }
+        }
+
+        /// <summary>
+        /// 指定されたエンド種別に対応するエンドCSVを返します。
+        /// </summary>
+        public TextAsset GetEndingCsv(string endingKey)
+        {
+            switch (endingKey)
+            {
+                case "A":
+                    return endingCsvA;
+                case "B":
+                    return endingCsvB;
+                default:
+                    return null;
+            }
+        }
+
+        /// <summary>
+        /// 選択画面の検索やデバッグ表示で使いやすい結合済みテキストを返します。
+        /// </summary>
+        public string BuildSearchText()
+        {
+            return string.Join(
+                " ",
+                characterId,
+                displayName,
+                crimeSummary,
+                publicRecord,
+                personalityNote,
+                admissionReason
+            );
+        }
+
+        /// <summary>
+        /// インスペクター上で見分けやすい簡易ラベルを返します。
+        /// </summary>
+        public string BuildDebugLabel()
+        {
+            if (string.IsNullOrWhiteSpace(displayName))
+            {
+                return characterId;
+            }
+
+            if (string.IsNullOrWhiteSpace(characterId))
+            {
+                return displayName;
+            }
+
+            return $"{displayName} ({characterId})";
+        }
+
+        /// <summary>
         /// シーン遷移後に保持する最低限の選択情報へ変換します。
         /// </summary>
         public SelectedCharacterInfo ToSelectedInfo(string signedManagerName)
         {
             return new SelectedCharacterInfo(characterId, displayName, signedManagerName);
         }
-
-        /// <summary>
-/// 指定された日数に対応する会話CSVを返します。
-/// </summary>
-public TextAsset GetDayCsv(int day)
-{
-    switch (day)
-    {
-        case 1:
-            return day1Csv;
-        case 2:
-            return day2Csv;
-        case 3:
-            return day3Csv;
-        default:
-            return null;
-    }
-}
-
-/// <summary>
-/// 指定されたエンド種別に対応するエンドCSVを返します。
-/// </summary>
-public TextAsset GetEndingCsv(string endingKey)
-{
-    switch (endingKey)
-    {
-        case "A":
-            return endingCsvA;
-        case "B":
-            return endingCsvB;
-        default:
-            return null;
-    }
-}
 
         /// <summary>
         /// ScriptableObject編集時にIDと表示名の前後空白を落とします。

@@ -15,6 +15,7 @@ namespace Kutsuroideke.Scenario
         [SerializeField] private TMP_Text dayText;
         [SerializeField] private TMP_Text speakerText;
         [SerializeField] private TMP_Text bodyText;
+        [SerializeField] private Image backgroundImage;
         [SerializeField] private Image portraitImage;
         [SerializeField] private Image stillImage;
         [SerializeField] private List<Sprite> stillSprites = new();
@@ -61,11 +62,12 @@ namespace Kutsuroideke.Scenario
         /// <summary>
         /// 現在行の内容をノベルUIへ反映します。
         /// </summary>
-        public void DisplayRow(ScenarioCsvRow row, string resolvedText, string dayLabel, Sprite portrait)
+        public void DisplayRow(ScenarioCsvRow row, string resolvedText, string dayLabel, Sprite background, Sprite portrait)
         {
             SetText(dayText, dayLabel);
             SetText(speakerText, row.Speaker);
             SetText(bodyText, resolvedText);
+            SetBackground(background);
             SetPortrait(portrait);
             SetStill(row.Still);
             ApplyAccentColor(row);
@@ -97,6 +99,20 @@ namespace Kutsuroideke.Scenario
             {
                 target.text = value ?? "";
             }
+        }
+
+        /// <summary>
+        /// キャラクター固定背景を背景Imageへ反映します。
+        /// </summary>
+        private void SetBackground(Sprite background)
+        {
+            if (backgroundImage == null)
+            {
+                return;
+            }
+
+            backgroundImage.sprite = background;
+            backgroundImage.enabled = background != null;
         }
 
         /// <summary>
