@@ -1,0 +1,1129 @@
+{
+  "source_psd": "ui.psd",
+  "canvas_px": [
+    3840,
+    2160
+  ],
+  "note": "bbox_px は 3840x2160 キャンバス上の画面座標そのまま。1920x1080基準なら座標・サイズとも0.5倍。",
+  "dedup": "ピクセル完全一致のレイヤーは1ファイルに統合し、placements に全配置を記録した。",
+  "items": [
+    {
+      "id": "P01",
+      "file": "parts/P01_titleBG.png",
+      "kind": "part",
+      "description": "タイトル画面の背景",
+      "note": "全画面の土台背景",
+      "layer_names": [
+        "titleBG"
+      ],
+      "size_px": [
+        3840,
+        2160
+      ],
+      "pixel_hash": "e11a80a56cdee1f7dca791346eef20bf",
+      "placements": [
+        {
+          "screen": "title",
+          "source_layer": "titleBG",
+          "group_path": [],
+          "bbox_px": [
+            0,
+            0,
+            3840,
+            2160
+          ],
+          "bbox_norm": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P02",
+      "file": "parts/P02_START.png",
+      "kind": "part",
+      "description": "STARTボタン（白パネル）",
+      "note": "右端は画面端で見切れるデザイン",
+      "layer_names": [
+        "START"
+      ],
+      "size_px": [
+        2132,
+        555
+      ],
+      "pixel_hash": "d9223420488540cdfeac4456a80cf2f9",
+      "placements": [
+        {
+          "screen": "title",
+          "source_layer": "START",
+          "group_path": [],
+          "bbox_px": [
+            1708,
+            125,
+            3840,
+            680
+          ],
+          "bbox_norm": [
+            0.444792,
+            0.05787,
+            1.0,
+            0.314815
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P03",
+      "file": "parts/P03_load.png",
+      "kind": "part",
+      "description": "LOADボタン（グラデ帯、STARTに重なる）",
+      "note": "PSD上の表記は ROAD だったが LOAD の誤字（制作者確認済み）。このファイルは画像加工で L に修正した差し替え版。PSD側の原画も直すこと",
+      "layer_names": [
+        "road"
+      ],
+      "size_px": [
+        1033,
+        271
+      ],
+      "pixel_hash": "7280da9a8509f6435f2ab05fff824073",
+      "placements": [
+        {
+          "screen": "title",
+          "source_layer": "road",
+          "group_path": [],
+          "bbox_px": [
+            2807,
+            554,
+            3840,
+            825
+          ],
+          "bbox_norm": [
+            0.73099,
+            0.256481,
+            1.0,
+            0.381944
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P04",
+      "file": "parts/P04_gallery_button.png",
+      "kind": "part",
+      "description": "GALLERYボタン（タイトル画面用）",
+      "note": "右端は画面端で見切れるデザイン",
+      "layer_names": [
+        "gallery"
+      ],
+      "size_px": [
+        1360,
+        366
+      ],
+      "pixel_hash": "b42c2a05b9e4224d5b04f2cd400445e4",
+      "placements": [
+        {
+          "screen": "title",
+          "source_layer": "gallery",
+          "group_path": [],
+          "bbox_px": [
+            2480,
+            858,
+            3840,
+            1224
+          ],
+          "bbox_norm": [
+            0.645833,
+            0.397222,
+            1.0,
+            0.566667
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P05",
+      "file": "parts/P05_credit_button.png",
+      "kind": "part",
+      "description": "CREDITボタン（タイトル画面用）",
+      "note": "右端は画面端で見切れるデザイン",
+      "layer_names": [
+        "credit"
+      ],
+      "size_px": [
+        1360,
+        366
+      ],
+      "pixel_hash": "8da5742944363a96552f23d6b8d7abf9",
+      "placements": [
+        {
+          "screen": "title",
+          "source_layer": "credit",
+          "group_path": [],
+          "bbox_px": [
+            2480,
+            1268,
+            3840,
+            1634
+          ],
+          "bbox_norm": [
+            0.645833,
+            0.587037,
+            1.0,
+            0.756481
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P06",
+      "file": "parts/P06_BGM_SE_panel.png",
+      "kind": "part",
+      "description": "BGM/SE 音量パネル土台（白パネル＋BGM/SE文字）",
+      "note": "この上にスライダー3点が重なる",
+      "layer_names": [
+        "BGM SE"
+      ],
+      "size_px": [
+        1702,
+        378
+      ],
+      "pixel_hash": "9fefac179e516457e55a626a932c211b",
+      "placements": [
+        {
+          "screen": "title",
+          "source_layer": "BGM SE",
+          "group_path": [],
+          "bbox_px": [
+            2138,
+            1706,
+            3840,
+            2084
+          ],
+          "bbox_norm": [
+            0.556771,
+            0.789815,
+            1.0,
+            0.964815
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P07",
+      "file": "parts/P07_slider_base.png",
+      "kind": "part",
+      "description": "音量スライダー：枠（8マスの輪郭）",
+      "note": "BGM用とSE用は同一画像のため1点に統合",
+      "layer_names": [
+        "BGMbase",
+        "SEbase"
+      ],
+      "size_px": [
+        1025,
+        118
+      ],
+      "pixel_hash": "827f2c6bb0aa72e97bc949db5d0cb517",
+      "placements": [
+        {
+          "screen": "title",
+          "source_layer": "BGMbase",
+          "group_path": [],
+          "bbox_px": [
+            2737,
+            1768,
+            3762,
+            1886
+          ],
+          "bbox_norm": [
+            0.71276,
+            0.818519,
+            0.979688,
+            0.873148
+          ]
+        },
+        {
+          "screen": "title",
+          "source_layer": "SEbase",
+          "group_path": [],
+          "bbox_px": [
+            2737,
+            1912,
+            3762,
+            2030
+          ],
+          "bbox_norm": [
+            0.71276,
+            0.885185,
+            0.979688,
+            0.939815
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P08",
+      "file": "parts/P08_slider_BG.png",
+      "kind": "part",
+      "description": "音量スライダー：下地（暗色8マス）",
+      "note": "BGM用とSE用は同一画像のため1点に統合",
+      "layer_names": [
+        "BGMBG",
+        "SEBG"
+      ],
+      "size_px": [
+        1005,
+        98
+      ],
+      "pixel_hash": "09ebeba8c5c603ed180831725c9922fc",
+      "placements": [
+        {
+          "screen": "title",
+          "source_layer": "BGMBG",
+          "group_path": [],
+          "bbox_px": [
+            2747,
+            1778,
+            3752,
+            1876
+          ],
+          "bbox_norm": [
+            0.715365,
+            0.823148,
+            0.977083,
+            0.868519
+          ]
+        },
+        {
+          "screen": "title",
+          "source_layer": "SEBG",
+          "group_path": [],
+          "bbox_px": [
+            2747,
+            1922,
+            3752,
+            2020
+          ],
+          "bbox_norm": [
+            0.715365,
+            0.889815,
+            0.977083,
+            0.935185
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P09",
+      "file": "parts/P09_slider_bar.png",
+      "kind": "part",
+      "description": "音量スライダー：バー（グラデ8マス）",
+      "note": "PSD上の名前は BGNbar（BGMbarの表記ゆれと思われる）。音量に応じて横幅をマスクして使う想定。BGM用とSE用は同一画像のため1点に統合",
+      "layer_names": [
+        "BGNbar",
+        "SEbar"
+      ],
+      "size_px": [
+        1005,
+        98
+      ],
+      "pixel_hash": "696b5e6b1c1539ffccb6e43f82ca88fd",
+      "placements": [
+        {
+          "screen": "title",
+          "source_layer": "BGNbar",
+          "group_path": [],
+          "bbox_px": [
+            2747,
+            1778,
+            3752,
+            1876
+          ],
+          "bbox_norm": [
+            0.715365,
+            0.823148,
+            0.977083,
+            0.868519
+          ]
+        },
+        {
+          "screen": "title",
+          "source_layer": "SEbar",
+          "group_path": [],
+          "bbox_px": [
+            2747,
+            1922,
+            3752,
+            2020
+          ],
+          "bbox_norm": [
+            0.715365,
+            0.889815,
+            0.977083,
+            0.935185
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P10",
+      "file": "parts/P10_creditBG.png",
+      "kind": "part",
+      "description": "CREDIT画面のウィンドウ枠",
+      "note": "",
+      "layer_names": [
+        "creditBG"
+      ],
+      "size_px": [
+        3624,
+        1979
+      ],
+      "pixel_hash": "8efe2cf33e52033ae698c8d2e4dec857",
+      "placements": [
+        {
+          "screen": "credit",
+          "source_layer": "creditBG",
+          "group_path": [
+            "フォルダー 2"
+          ],
+          "bbox_px": [
+            108,
+            128,
+            3732,
+            2107
+          ],
+          "bbox_norm": [
+            0.028125,
+            0.059259,
+            0.971875,
+            0.975463
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P11",
+      "file": "parts/P11_credittitle.png",
+      "kind": "part",
+      "description": "CREDIT見出し帯（グラデ）",
+      "note": "",
+      "layer_names": [
+        "credittitle"
+      ],
+      "size_px": [
+        1617,
+        382
+      ],
+      "pixel_hash": "318aded60a92c87600b21afb00106a6e",
+      "placements": [
+        {
+          "screen": "credit",
+          "source_layer": "credittitle",
+          "group_path": [
+            "フォルダー 2"
+          ],
+          "bbox_px": [
+            47,
+            104,
+            1664,
+            486
+          ],
+          "bbox_norm": [
+            0.01224,
+            0.048148,
+            0.433333,
+            0.225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P12",
+      "file": "parts/P12_galleryBG.png",
+      "kind": "part",
+      "description": "GALLERY画面の枠＋上下の菱形模様帯",
+      "note": "",
+      "layer_names": [
+        "galleryBG"
+      ],
+      "size_px": [
+        3840,
+        2127
+      ],
+      "pixel_hash": "89e9a88bc11793c7be9e92cdc63a3d9c",
+      "placements": [
+        {
+          "screen": "gallery",
+          "source_layer": "galleryBG",
+          "group_path": [
+            "フォルダー 2 のコピー"
+          ],
+          "bbox_px": [
+            0,
+            18,
+            3840,
+            2145
+          ],
+          "bbox_norm": [
+            0.0,
+            0.008333,
+            1.0,
+            0.993056
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P13",
+      "file": "parts/P13_gallerytitle.png",
+      "kind": "part",
+      "description": "GALLERY見出し帯（グラデ）",
+      "note": "",
+      "layer_names": [
+        "gallerytitle"
+      ],
+      "size_px": [
+        1422,
+        304
+      ],
+      "pixel_hash": "ddc700cc0d9542d8aaf0bb826ba173b7",
+      "placements": [
+        {
+          "screen": "gallery",
+          "source_layer": "gallerytitle",
+          "group_path": [
+            "フォルダー 2 のコピー"
+          ],
+          "bbox_px": [
+            83,
+            72,
+            1505,
+            376
+          ],
+          "bbox_norm": [
+            0.021615,
+            0.033333,
+            0.391927,
+            0.174074
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P14",
+      "file": "parts/P14_LOADtitle.png",
+      "kind": "part",
+      "description": "LOAD見出し帯（グラデ、?なし）",
+      "note": "ロード画面の見出しとして使用する（制作者確認済み）。確認ダイアログ用の Loadcheck（?付き）とは別物。この画面のデモ画像はなし",
+      "layer_names": [
+        "LOADtitle"
+      ],
+      "size_px": [
+        1234,
+        391
+      ],
+      "pixel_hash": "da80d4cfdca4d1bd65d672ad092e5e75",
+      "placements": [
+        {
+          "screen": "load_screen",
+          "source_layer": "LOADtitle",
+          "group_path": [
+            "フォルダー 2 のコピー"
+          ],
+          "bbox_px": [
+            47,
+            95,
+            1281,
+            486
+          ],
+          "bbox_norm": [
+            0.01224,
+            0.043981,
+            0.333594,
+            0.225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P15",
+      "file": "parts/P15_SAVEtitle.png",
+      "kind": "part",
+      "description": "SAVE見出し帯（グラデ、?なし）",
+      "note": "セーブ画面の見出しとして使用する（制作者確認済み）。確認ダイアログ用の Savecheck（?付き）とは別物。この画面のデモ画像はなし",
+      "layer_names": [
+        "SAVEtitle"
+      ],
+      "size_px": [
+        1234,
+        391
+      ],
+      "pixel_hash": "a0a0e2bef08e5a6684fddd0ed57184bc",
+      "placements": [
+        {
+          "screen": "save_screen",
+          "source_layer": "SAVEtitle",
+          "group_path": [
+            "フォルダー 2 のコピー"
+          ],
+          "bbox_px": [
+            47,
+            95,
+            1281,
+            486
+          ],
+          "bbox_norm": [
+            0.01224,
+            0.043981,
+            0.333594,
+            0.225
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P16",
+      "file": "parts/P16_pop.png",
+      "kind": "part",
+      "description": "確認ダイアログの土台パネル",
+      "note": "LOAD/SAVE共通",
+      "layer_names": [
+        "pop"
+      ],
+      "size_px": [
+        2279,
+        1280
+      ],
+      "pixel_hash": "8f0aa05a5a6001355c9c549cdf903d7f",
+      "placements": [
+        {
+          "screen": "load",
+          "source_layer": "pop",
+          "group_path": [
+            "フォルダー 1"
+          ],
+          "bbox_px": [
+            781,
+            440,
+            3060,
+            1720
+          ],
+          "bbox_norm": [
+            0.203385,
+            0.203704,
+            0.796875,
+            0.796296
+          ]
+        },
+        {
+          "screen": "save",
+          "source_layer": "pop",
+          "group_path": [
+            "フォルダー 1"
+          ],
+          "bbox_px": [
+            781,
+            440,
+            3060,
+            1720
+          ],
+          "bbox_norm": [
+            0.203385,
+            0.203704,
+            0.796875,
+            0.796296
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P17",
+      "file": "parts/P17_Savecheck.png",
+      "kind": "part",
+      "description": "SAVE?見出し帯（確認ダイアログ用）",
+      "note": "",
+      "layer_names": [
+        "Savecheck"
+      ],
+      "size_px": [
+        1617,
+        382
+      ],
+      "pixel_hash": "6f62abf1da3517cdaf09dabde2deac9e",
+      "placements": [
+        {
+          "screen": "save",
+          "source_layer": "Savecheck",
+          "group_path": [
+            "フォルダー 1"
+          ],
+          "bbox_px": [
+            544,
+            299,
+            2161,
+            681
+          ],
+          "bbox_norm": [
+            0.141667,
+            0.138426,
+            0.56276,
+            0.315278
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P18",
+      "file": "parts/P18_Loadcheck.png",
+      "kind": "part",
+      "description": "LOAD?見出し帯（確認ダイアログ用）",
+      "note": "",
+      "layer_names": [
+        "Loadcheck"
+      ],
+      "size_px": [
+        1617,
+        382
+      ],
+      "pixel_hash": "2b6723c965493a93917cdcd0e37a3880",
+      "placements": [
+        {
+          "screen": "load",
+          "source_layer": "Loadcheck",
+          "group_path": [
+            "フォルダー 1"
+          ],
+          "bbox_px": [
+            544,
+            299,
+            2161,
+            681
+          ],
+          "bbox_norm": [
+            0.141667,
+            0.138426,
+            0.56276,
+            0.315278
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P19",
+      "file": "parts/P19_YES.png",
+      "kind": "part",
+      "description": "はいボタン（ピンク）",
+      "note": "LOAD/SAVE共通",
+      "layer_names": [
+        "YES"
+      ],
+      "size_px": [
+        860,
+        297
+      ],
+      "pixel_hash": "9daaa80aebe8dc5ecd3219cf58a52217",
+      "placements": [
+        {
+          "screen": "load",
+          "source_layer": "YES",
+          "group_path": [
+            "フォルダー 1"
+          ],
+          "bbox_px": [
+            961,
+            1401,
+            1821,
+            1698
+          ],
+          "bbox_norm": [
+            0.25026,
+            0.648611,
+            0.474219,
+            0.786111
+          ]
+        },
+        {
+          "screen": "save",
+          "source_layer": "YES",
+          "group_path": [
+            "フォルダー 1"
+          ],
+          "bbox_px": [
+            961,
+            1401,
+            1821,
+            1698
+          ],
+          "bbox_norm": [
+            0.25026,
+            0.648611,
+            0.474219,
+            0.786111
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P20",
+      "file": "parts/P20_NO.png",
+      "kind": "part",
+      "description": "いいえボタン（青）",
+      "note": "LOAD/SAVE共通",
+      "layer_names": [
+        "NO"
+      ],
+      "size_px": [
+        860,
+        297
+      ],
+      "pixel_hash": "8b45f2f779615f4c41dc97957725890e",
+      "placements": [
+        {
+          "screen": "load",
+          "source_layer": "NO",
+          "group_path": [
+            "フォルダー 1"
+          ],
+          "bbox_px": [
+            1987,
+            1401,
+            2847,
+            1698
+          ],
+          "bbox_norm": [
+            0.517448,
+            0.648611,
+            0.741406,
+            0.786111
+          ]
+        },
+        {
+          "screen": "save",
+          "source_layer": "NO",
+          "group_path": [
+            "フォルダー 1"
+          ],
+          "bbox_px": [
+            1987,
+            1401,
+            2847,
+            1698
+          ],
+          "bbox_norm": [
+            0.517448,
+            0.648611,
+            0.741406,
+            0.786111
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P21",
+      "file": "parts/P21_close.png",
+      "kind": "part",
+      "description": "閉じるボタン（×）",
+      "note": "CREDIT/GALLERY/確認ダイアログで同一画像を共用（PSD内に3か所）",
+      "layer_names": [
+        "close"
+      ],
+      "size_px": [
+        280,
+        281
+      ],
+      "pixel_hash": "d3112b331ae51d60bd2a9c65228c4278",
+      "placements": [
+        {
+          "screen": "credit",
+          "source_layer": "close",
+          "group_path": [
+            "フォルダー 2"
+          ],
+          "bbox_px": [
+            3434,
+            122,
+            3714,
+            403
+          ],
+          "bbox_norm": [
+            0.894271,
+            0.056481,
+            0.967187,
+            0.186574
+          ]
+        },
+        {
+          "screen": "gallery",
+          "source_layer": "close",
+          "group_path": [
+            "フォルダー 2 のコピー"
+          ],
+          "bbox_px": [
+            3434,
+            122,
+            3714,
+            403
+          ],
+          "bbox_norm": [
+            0.894271,
+            0.056481,
+            0.967187,
+            0.186574
+          ]
+        },
+        {
+          "screen": "load",
+          "source_layer": "close",
+          "group_path": [
+            "フォルダー 1"
+          ],
+          "bbox_px": [
+            2811,
+            396,
+            3091,
+            677
+          ],
+          "bbox_norm": [
+            0.732031,
+            0.183333,
+            0.804948,
+            0.313426
+          ]
+        },
+        {
+          "screen": "save",
+          "source_layer": "close",
+          "group_path": [
+            "フォルダー 1"
+          ],
+          "bbox_px": [
+            2811,
+            396,
+            3091,
+            677
+          ],
+          "bbox_norm": [
+            0.732031,
+            0.183333,
+            0.804948,
+            0.313426
+          ]
+        }
+      ]
+    },
+    {
+      "id": "R01",
+      "file": "reference/R01_rogosample.png",
+      "kind": "reference",
+      "description": "ロゴのサンプル（ゲームタイトル サンプル）",
+      "note": "サンプル文字。本番ロゴに差し替える前提の参考画像",
+      "layer_names": [
+        "rogosample"
+      ],
+      "size_px": [
+        1503,
+        1503
+      ],
+      "pixel_hash": "e7950840aef2ab3ca563796233d0badf",
+      "placements": [
+        {
+          "screen": "title",
+          "source_layer": "rogosample",
+          "group_path": [],
+          "bbox_px": [
+            89,
+            558,
+            1592,
+            2061
+          ],
+          "bbox_norm": [
+            0.023177,
+            0.258333,
+            0.414583,
+            0.954167
+          ]
+        }
+      ]
+    },
+    {
+      "id": "R02",
+      "file": "reference/R02_titlesample.png",
+      "kind": "reference",
+      "description": "キャラクター別タイトル のサンプル文字",
+      "note": "サンプル文字。参考画像",
+      "layer_names": [
+        "titlesample"
+      ],
+      "size_px": [
+        982,
+        148
+      ],
+      "pixel_hash": "1ac0c8dae57987502d9fbca45b569e22",
+      "placements": [
+        {
+          "screen": "title",
+          "source_layer": "titlesample",
+          "group_path": [],
+          "bbox_px": [
+            139,
+            405,
+            1121,
+            553
+          ],
+          "bbox_norm": [
+            0.036198,
+            0.1875,
+            0.291927,
+            0.256019
+          ]
+        }
+      ]
+    },
+    {
+      "id": "R03",
+      "file": "reference/R03_creditcharademo.png",
+      "kind": "reference",
+      "description": "CREDIT画面のキャラ紹介ラフ（手書き）",
+      "note": "ラフ。本番のキャラ資料に差し替える前提の参考画像",
+      "layer_names": [
+        "creditcharademo"
+      ],
+      "size_px": [
+        3318,
+        1465
+      ],
+      "pixel_hash": "82c85296f4400e7348f2e212e6ce1e88",
+      "placements": [
+        {
+          "screen": "credit",
+          "source_layer": "creditcharademo",
+          "group_path": [
+            "フォルダー 2"
+          ],
+          "bbox_px": [
+            275,
+            558,
+            3593,
+            2023
+          ],
+          "bbox_norm": [
+            0.071615,
+            0.258333,
+            0.935677,
+            0.936574
+          ]
+        }
+      ]
+    },
+    {
+      "id": "R04",
+      "file": "reference/R04_gallerydemo.png",
+      "kind": "reference",
+      "description": "GALLERY画面の画像配置ダミー（黒/白の矩形）",
+      "note": "ダミー。本番画像の配置・サイズの参考",
+      "layer_names": [
+        "gallerydemo"
+      ],
+      "size_px": [
+        3131,
+        1487
+      ],
+      "pixel_hash": "cc4edafc4aabe209cefaff25a3602d0b",
+      "placements": [
+        {
+          "screen": "gallery",
+          "source_layer": "gallerydemo",
+          "group_path": [
+            "フォルダー 2 のコピー"
+          ],
+          "bbox_px": [
+            355,
+            441,
+            3486,
+            1928
+          ],
+          "bbox_norm": [
+            0.092448,
+            0.204167,
+            0.907813,
+            0.892593
+          ]
+        }
+      ]
+    },
+    {
+      "id": "R05",
+      "file": "reference/R05_savedemo.png",
+      "kind": "reference",
+      "description": "セーブしますか？ の文字",
+      "note": "テキスト参考。実装側で文字として出す想定",
+      "layer_names": [
+        "savedemo"
+      ],
+      "size_px": [
+        904,
+        126
+      ],
+      "pixel_hash": "c51885e5f3a919218b78b05d23297a48",
+      "placements": [
+        {
+          "screen": "save",
+          "source_layer": "savedemo",
+          "group_path": [
+            "フォルダー 1"
+          ],
+          "bbox_px": [
+            1468,
+            1017,
+            2372,
+            1143
+          ],
+          "bbox_norm": [
+            0.382292,
+            0.470833,
+            0.617708,
+            0.529167
+          ]
+        }
+      ]
+    },
+    {
+      "id": "R06",
+      "file": "reference/R06_loaddemo.png",
+      "kind": "reference",
+      "description": "ロードしますか？ の文字",
+      "note": "テキスト参考。実装側で文字として出す想定",
+      "layer_names": [
+        "loaddemo"
+      ],
+      "size_px": [
+        898,
+        122
+      ],
+      "pixel_hash": "a749d3ba006be621cd72775f53eb5e37",
+      "placements": [
+        {
+          "screen": "load",
+          "source_layer": "loaddemo",
+          "group_path": [
+            "フォルダー 1"
+          ],
+          "bbox_px": [
+            1474,
+            1021,
+            2372,
+            1143
+          ],
+          "bbox_norm": [
+            0.383854,
+            0.472685,
+            0.617708,
+            0.529167
+          ]
+        }
+      ]
+    }
+  ]
+}
